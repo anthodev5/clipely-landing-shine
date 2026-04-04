@@ -33,15 +33,6 @@ const HeroSection = ({ onOpenContact }: HeroSectionProps) => {
           </div>
         </div>
 
-        {/* Trust badges */}
-        <div className="mt-16 md:mt-24 animate-fade-up-delay-2 text-center">
-          <p className="text-muted-foreground text-sm mb-6">Trusted by individuals and teams at the world's best companies</p>
-          <div className="flex items-center justify-center gap-8 md:gap-14">
-            {["TechFlow", "Prismify", "NovaCraft", "DataVault", "QuantumOS"].map((name) => (
-              <span key={name} className="text-muted-foreground/50 font-bold text-base md:text-lg tracking-wide">{name}</span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
