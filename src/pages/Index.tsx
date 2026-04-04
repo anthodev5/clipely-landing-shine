@@ -15,7 +15,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar onOpenContact={() => setContactOpen(true)} />
       <HeroSection onOpenContact={() => setContactOpen(true)} />
-      <StatsSection />
+      
       <ServicesSection />
       <ProcessSection />
       <CTASection onOpenContact={() => setContactOpen(true)} />
