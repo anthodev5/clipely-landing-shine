@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const CTASection = () => {
+interface CTASectionProps {
+  onOpenContact: () => void;
+}
+
+const CTASection = ({ onOpenContact }: CTASectionProps) => {
   return (
     <section id="contact" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
@@ -12,7 +16,7 @@ const CTASection = () => {
           <p className="text-primary-foreground/80 text-lg max-w-xl mx-auto mb-8">
             Let's talk about your project. We'll get back to you within 24 hours with a tailored proposal.
           </p>
-          <Button variant="secondary" className="rounded-full px-8 py-3 h-auto text-base font-semibold">
+          <Button variant="secondary" className="rounded-full px-8 py-3 h-auto text-base font-semibold" onClick={onOpenContact}>
             Get in Touch <ArrowRight className="ml-1 !size-5" />
           </Button>
         </div>

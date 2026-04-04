@@ -3,9 +3,13 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/clipely-logo.png";
 import { Menu, X } from "lucide-react";
 
-const links = ["Services", "Process", "Work", "Contact"];
+const navLinks = ["Services", "Process", "Work"];
 
-const Navbar = () => {
+interface NavbarProps {
+  onOpenContact: () => void;
+}
+
+const Navbar = ({ onOpenContact }: NavbarProps) => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,15 +27,21 @@ const Navbar = () => {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {links.map((item) => (
+          {navLinks.map((item) => (
             <a key={item} href={`#${item.toLowerCase()}`} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {item}
             </a>
           ))}
+          <button
+            onClick={onOpenContact}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Contact
+          </button>
         </div>
 
         <div className="hidden md:block">
-          <Button size="sm" className="rounded-full px-6">
+          <Button size="sm" className="rounded-full px-6" onClick={onOpenContact}>
             Get Started
           </Button>
         </div>
@@ -43,10 +53,11 @@ const Navbar = () => {
 
       {open && (
         <div className="md:hidden bg-background border-b border-border px-4 pb-4 flex flex-col gap-3">
-          {links.map((item) => (
+          {navLinks.map((item) => (
             <a key={item} href={`#${item.toLowerCase()}`} className="text-sm font-medium text-muted-foreground" onClick={() => setOpen(false)}>{item}</a>
           ))}
-          <Button size="sm" className="rounded-full w-full">Get Started</Button>
+          <button className="text-sm font-medium text-muted-foreground text-left" onClick={() => { setOpen(false); onOpenContact(); }}>Contact</button>
+          <Button size="sm" className="rounded-full w-full" onClick={() => { setOpen(false); onOpenContact(); }}>Get Started</Button>
         </div>
       )}
     </nav>
