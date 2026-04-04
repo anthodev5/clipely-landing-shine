@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <img src={logo} alt="Clipely" className="h-7" />
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            {["Services", "Process", "Work", "Contact"].map((item) => (
+            {["Services", "Process", "Contact"].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-foreground transition-colors">{item}</a>
             ))}
           </div>

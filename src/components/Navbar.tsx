@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/clipely-logo.png";
 import { Menu, X } from "lucide-react";
 
-const navLinks = ["Services", "Process", "Work"];
+const navLinks = ["Services", "Process"];
 
 interface NavbarProps {
   onOpenContact: () => void;
