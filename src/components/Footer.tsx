@@ -2,7 +2,7 @@ import logo from "@/assets/clipely-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-12 bg-muted/30">
+    <footer className="border-t border-border py-12 bg-background">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <img src={logo} alt="Clipely" className="h-7" />
